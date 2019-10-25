@@ -11,7 +11,7 @@
     "tsc-glob": "./bin/tsc-glob.js"
   },
   "scripts": {
-    "checkjs": "tsc --allowJs --checkJs --noEmit --resolveJsonModule --target es5 bin/*.js",
+    "checkjs": "node ./bin/tsc-glob.js --files-glob bin/*.js --allowJs --noEmit --checkJs --resolveJsonModule --target es5 bin/*.js",
     "test": "_mocha",
     "test:watch": "_mocha --watch",
     "coverage": "istanbul cover _mocha",
