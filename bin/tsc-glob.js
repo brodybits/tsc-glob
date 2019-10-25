@@ -1,20 +1,17 @@
 #! /usr/bin/env node
 
 var spawn = require('child_process').spawn,
+    execa = require('execa'),
     helper = require('./command-helper'),
     options = helper.getOptions(),
-    commandArgs = options.unknown.concat(helper.resolveTSFiles()),
-    proc = spawn(helper.findTSCExecutable(), commandArgs, { stdio: 'inherit' });
+    commandArgs = options.unknown.concat(helper.resolveTSFiles());
 
-proc.on('exit', function (code, signal) {
-    process.on('exit', function(){
-        if (signal) {
-            process.kill(process.pid, signal);
-        } else {
-            process.exit(code);
-        }
-    });
-});
+try {
+    proc = execa.sync(helper.findTSCExecutable(), commandArgs, { stdio: 'inherit' });
+} catch(e) {
+    console.error('tsc failre');
+    throw(e);
+}
 
 // terminate children.
 process.on('SIGINT', function () {
