@@ -29,6 +29,7 @@
   "author": "Jorge García Ramos <draco1989200@gmail.com>",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^12.11.7",
     "chai": "^3.5.0",
     "crlf": "^1.1.0",
     "istanbul": "^0.4.4",
