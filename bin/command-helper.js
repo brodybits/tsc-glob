@@ -1,5 +1,9 @@
 #!/usr/bin/env node
 
+/**
+ * @typedef {import('commander').Command} Command
+ */
+
 const glob = require('glob'),
     fs = require('fs'),
     path = require('path'),
