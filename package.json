@@ -12,7 +12,6 @@
   },
   "scripts": {
     "checkjs": "tsc --allowJs --checkJs --noEmit --resolveJsonModule --target es5 bin/*.js",
-    "tsc-lint": "tsc --allowJs --noEmit --target es5 bin/*.js",
     "test": "_mocha",
     "test:watch": "_mocha --watch",
     "coverage": "istanbul cover _mocha",
