@@ -11,6 +11,7 @@
     "tsc-glob": "./bin/tsc-glob.js"
   },
   "scripts": {
+    "tsc-lint": "tsc --allowJs --noEmit --target es5 bin/*.js",
     "test": "_mocha",
     "test:watch": "_mocha --watch",
     "coverage": "istanbul cover _mocha",
