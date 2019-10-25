@@ -27,7 +27,7 @@ function resolveGlobs() {
     } else {
         tsConfigFile = path.join(process.cwd(), options['tsconfigFile']);
         try {
-            fs.accessSync(tsConfigFile, fs.R_OK);
+            fs.accessSync(tsConfigFile, fs.constants.R_OK);
             tsConfig = require(tsConfigFile);
 
             if (!tsConfig['filesGlob'] || !(tsConfig['filesGlob'] instanceof Array)) {
@@ -48,7 +48,7 @@ function resolveGlobs() {
  */
 function fileExists(cmdPath) {
     try {
-        fs.accessSync(cmdPath, fs.F_OK);
+        fs.accessSync(cmdPath, fs.constants.F_OK);
         return true;
     } catch (e) {
         return false;
