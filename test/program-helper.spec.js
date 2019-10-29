@@ -3,13 +3,13 @@ var expect = require('chai').expect,
     path = require('path');
 
 
-describe('command-helper', function () {
+describe('program-helper', function () {
     var helper;
 
     beforeEach(function () {
         process.argv = [];
         process.chdir(path.join(__dirname, '..'));
-        helper = require('../bin/command-helper');
+        helper = require('../lib/program-helper');
     });
 
     xdescribe('.findTSCExecutable()', function () {

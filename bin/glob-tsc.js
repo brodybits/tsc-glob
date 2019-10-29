@@ -1,7 +1,7 @@
 #! /usr/bin/env node
 
 var spawn = require('child_process').spawn,
-    helper = require('./command-helper'),
+    helper = require('../lib/program-helper'),
     options = helper.getOptions(),
     commandArgs = options.unknown.concat(helper.resolveTSFiles()),
     proc = spawn(helper.findTSCExecutable(), commandArgs, { stdio: 'inherit' });

@@ -5,6 +5,7 @@
   "main": "bin/glob-tsc.js",
   "files": [
     "bin",
+    "lib",
     "README.md"
   ],
   "bin": {

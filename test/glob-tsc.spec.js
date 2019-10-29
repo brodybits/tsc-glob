@@ -4,7 +4,7 @@ var path = require('path'),
 
 describe("glob-tsc bin script", function () {
     beforeEach(function () {
-        mock('../bin/command-helper', './command-helper.mock');
+        mock('../lib/program-helper', './program-helper.mock');
         mock('child_process', './child_process.mock.js');
     });
 
