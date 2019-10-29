@@ -99,7 +99,7 @@ Helper.resolveTSFiles = function () {
  */
 Helper.getOptions = function () {
     var commander = require('commander')
-        .command('tsc-glob')
+        .command('glob-tsc')
         .version(require('../package.json').version)
         .usage('[options]')
         .allowUnknownOption(true)

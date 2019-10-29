@@ -1,17 +1,17 @@
 {
-  "name": "tsc-glob",
-  "version": "1.1.0",
+  "name": "glob-tsc",
+  "version": "0.0.1-dev",
   "description": "Typescript compiler wrapper to support 'filesGlob' tsconfig.json file option",
-  "main": "bin/tsc-glob.js",
+  "main": "bin/glob-tsc.js",
   "files": [
     "bin",
     "README.md"
   ],
   "bin": {
-    "tsc-glob": "./bin/tsc-glob.js"
+    "glob-tsc": "./bin/glob-tsc.js"
   },
   "scripts": {
-    "test": "_mocha",
+    "test": "_mocha && node bin/glob-tsc.js --allowJs --checkJs --noEmit -g test/**/*.mock.js",
     "test:watch": "_mocha --watch",
     "coverage": "istanbul cover _mocha",
     "build": "crlf --set=LF bin/*.js",
@@ -24,19 +24,19 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/jogaram/tsc-glob"
+    "url": "https://github.com/brodybits/glob-tsc"
   },
-  "author": "Jorge García Ramos <draco1989200@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "chai": "^3.5.0",
     "crlf": "^1.1.0",
     "istanbul": "^0.4.4",
     "mocha": "^2.5.3",
-    "mock-require": "^1.3.0"
+    "mock-require": "^1.3.0",
+    "typescript": "^3.6.4"
   },
   "peerDependencies": {
-    "typescript": "^1.8.10"
+    "typescript": "^3.0.0"
   },
   "dependencies": {
     "chalk": "^1.1.3",
