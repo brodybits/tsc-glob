@@ -5,7 +5,7 @@ module.exports={
     resolveTSFiles: function () {
         return ['src/User.ts']
     },
-    findTSCExecutable: function () {
-        return 'node_modules/.bin/tsc'
+    getTSCCommand: function () {
+        return 'tsc'
     }
 };

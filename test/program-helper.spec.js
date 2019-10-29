@@ -12,22 +12,14 @@ describe('program-helper', function () {
         helper = require('../lib/program-helper');
     });
 
-    xdescribe('.findTSCExecutable()', function () {
-        it('should find tsc in typescript/bin dir', function () {
-            process.chdir(path.join(__dirname, 'tsc_package'));
-            expect(helper.findTSCExecutable()).to.eq('node_modules/typescript/bin/tsc')
+    describe('.getTSCCommand()', function () {
+        it('should find valid tsc in top-level project dir', function () {
+            expect(helper.getTSCCommand()).to.eq('tsc')
         });
-        it('should find tsc in .bin dir', function () {
-            process.chdir(path.join(__dirname, 'tsc_bin'));
-            expect(helper.findTSCExecutable()).to.eq('node_modules/.bin/tsc')
-        });
-        it('should find tsc in typescript/bin dir', function () {
-            process.chdir(path.join(__dirname, 'tsc_multiple'));
-            expect(helper.findTSCExecutable()).to.eq('node_modules/.bin/tsc')
-        });
-        it('should throw error if no tsc found', function () {
+        // FUTURE TODO test error case:
+        xit('should throw error if no valid tsc is found', function () {
             process.chdir(path.join(__dirname, 'empty'));
-            expect(helper.findTSCExecutable).throws('ERROR: Missing Typescript compiler executable [tsc].')
+            expect(helper.getTSCCommand).throws('ERROR: Missing Typescript compiler executable [tsc].')
         });
     });
 

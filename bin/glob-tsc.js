@@ -4,7 +4,7 @@ var spawn = require('child_process').spawn,
     helper = require('../lib/program-helper'),
     options = helper.getOptions(),
     commandArgs = options.unknown.concat(helper.resolveTSFiles()),
-    proc = spawn(helper.findTSCExecutable(), commandArgs, { stdio: 'inherit' });
+    proc = spawn(helper.getTSCCommand(), commandArgs, { stdio: 'inherit' });
 
 proc.on('exit', function (code, signal) {
     process.on('exit', function(){
