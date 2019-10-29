@@ -12,6 +12,7 @@
     "glob-tsc": "./bin/glob-tsc.js"
   },
   "scripts": {
+    "checkjs": "node bin/glob-tsc.js --allowJs --checkJs --noEmit --resolveJsonModule --target es5 -g bin/**/*.js,test/**/*.js",
     "test": "_mocha && node bin/glob-tsc.js --allowJs --checkJs --noEmit -g test/**/*.mock.js",
     "test:watch": "_mocha --watch"
   },
@@ -26,6 +27,8 @@
   },
   "license": "ISC",
   "devDependencies": {
+    "@types/mocha": "^5.2.7",
+    "@types/node": "^12.11.7",
     "chai": "^4.2.0",
     "mocha": "^6.2.2",
     "mock-require": "^3.0.3",
