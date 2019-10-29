@@ -46,6 +46,7 @@ glob-tsc --files-globs src/**/ts/*.ts --outDir dist --declaration
 
 ## Major TODO items
 
+- cleaner & clearer log output
 - cleaner error reporting in the following cases:
   - no file globs or tsconfig.json file present
   - no valid tsc (TypeScript compiler) is found
