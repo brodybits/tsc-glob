@@ -13,10 +13,7 @@
   },
   "scripts": {
     "test": "_mocha && node bin/glob-tsc.js --allowJs --checkJs --noEmit -g test/**/*.mock.js",
-    "test:watch": "_mocha --watch",
-    "coverage": "istanbul cover _mocha",
-    "build": "crlf --set=LF bin/*.js",
-    "prepublish": "istanbul check-coverage"
+    "test:watch": "_mocha --watch"
   },
   "keywords": [
     "tsc",
@@ -29,11 +26,9 @@
   },
   "license": "ISC",
   "devDependencies": {
-    "chai": "^3.5.0",
-    "crlf": "^1.1.0",
-    "istanbul": "^0.4.4",
-    "mocha": "^2.5.3",
-    "mock-require": "^1.3.0",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2",
+    "mock-require": "^3.0.3",
     "typescript": "^3.6.4"
   },
   "peerDependencies": {
