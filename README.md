@@ -43,3 +43,9 @@ Using command globs (ignores tsconfig.json filesGlob)
 ```bash
 glob-tsc --files-globs src/**/ts/*.ts --outDir dist --declaration
 ```
+
+## Major TODO items
+
+- cleaner error reporting in the following cases:
+  - no file globs or tsconfig.json file present
+  - no valid tsc (TypeScript compiler) is found
