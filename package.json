@@ -13,7 +13,8 @@
   },
   "scripts": {
     "checkjs": "node bin/glob-tsc.js --allowJs --checkJs --noEmit --resolveJsonModule --target es5 -g bin/**/*.js,test/**/*.js",
-    "test": "_mocha && node bin/glob-tsc.js --allowJs --checkJs --noEmit -g test/**/*.mock.js",
+    "test": "npm-run-all checkjs test:mocha",
+    "test:mocha": "mocha --timeout 5000",
     "test:watch": "_mocha --watch"
   },
   "keywords": [
@@ -32,6 +33,7 @@
     "chai": "^4.2.0",
     "mocha": "^6.2.2",
     "mock-require": "^3.0.3",
+    "npm-run-all": "^4.1.5",
     "typescript": "^3.6.4"
   },
   "peerDependencies": {
