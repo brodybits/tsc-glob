@@ -1,6 +1,6 @@
 #! /usr/bin/env node
 
-var spawn = require('child_process').spawn,
+var spawn = require('cross-spawn'),
     helper = require('../lib/program-helper'),
     options = helper.getOptions(),
     commandArgs = options.unknown.concat(helper.resolveTSFiles()),

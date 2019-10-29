@@ -8,10 +8,9 @@ var Process = function () {
     };
 };
 
-module.exports = {
-    spawn: function (cmd, args) {
+module.exports =
+    function (cmd, args) {
         expect(cmd).to.equal('tsc');
         expect(args).to.eql(['src/User.ts']);
         return new Process();
     }
-};

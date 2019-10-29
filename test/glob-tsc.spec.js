@@ -5,7 +5,7 @@ var path = require('path'),
 describe("glob-tsc bin script", function () {
     beforeEach(function () {
         mock('../lib/program-helper', './program-helper.mock');
-        mock('child_process', './child_process.mock.js');
+        mock('cross-spawn', './cross-spawn.mock.js');
     });
 
     it("should execute tsc command with vars", function () {
